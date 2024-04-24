@@ -1,0 +1,18 @@
+import unittest
+from decryptage import decrypt_vigenere  # Assurez-vous que cette importation est correcte
+
+class TestDecryptage(unittest.TestCase):
+    def test_decrypt_vigenere(self):
+        ciphertext = "RIJVS"
+        key = "KEY"
+        expected = "HELLO"
+        result = decrypt_vigenere(ciphertext, key)
+        self.assertEqual(result, expected, "Le déchiffrement Vigenere a échoué.")
+
+# Code pour exécuter les tests dans Jupyter ou iPython
+def run_tests():
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestDecryptage)
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
+
+run_tests()
